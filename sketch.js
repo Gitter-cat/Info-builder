@@ -4,7 +4,7 @@ function startup() {
   document.getElementById('start').style.display = 'none';
 
   const info = {};
-  const properties = ['Name', 'Nick Name', 'Age', 'Hobbies'];
+  const properties = ['Name', 'Nick Name', 'Age', 'Gender', 'Hobbies'];
   let count = 0;
 
   const question = document.createElement("input");
@@ -39,10 +39,20 @@ function giveRes(info) {
 
   const h3 = document.createElement('h3');
 
+  let pro1;
+  let pro2;
+  if (info.gender == 'Male' || info.gender == 'Masculine') {
+    pro1 = 'He'
+    pro2 = 'his'
+  } else {
+    pro1 = 'She'
+    pro2 = 'her'
+  }
+
   h3.textContent =
     `
-    ${info['Name']} is ${info['Age']} years old. He also called ${info['Nick Name']}.
-    Some of his hobbies are ${info['Hobbies'].join(', ')}.
+    ${info['Name']} is ${info['Age']} years old. ${pro1} also called ${info['Nick Name']}.
+    Some of ${pro2} hobbies are ${info['Hobbies'].join(', ')}.
     `;
 
   document.body.append(h3)
