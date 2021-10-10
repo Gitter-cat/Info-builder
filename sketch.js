@@ -41,7 +41,7 @@ function giveRes(info) {
 
   let pro1;
   let pro2;
-  if (info.gender == 'Male' || info.gender == 'Masculine' || info.gender.startsWith('M') || info.gender.startsWith('m')) {
+  if (info['Gender'] == 'Male' || info['Gender'] == 'Masculine' || info['Gender'].startsWith('M') || info['Gender'].startsWith('m')) {
     pro1 = 'He'
     pro2 = 'his'
   } else {
